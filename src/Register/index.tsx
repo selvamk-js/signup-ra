@@ -2,14 +2,31 @@ import * as React from "react";
 import { Formik } from "formik";
 
 import "./register.css";
+import FullPageLoader from "../components/FullPageLoader";
+
+//save user using post
+const saveUser = async (user: any) => {
+  const response = await fetch("http://localhost:3000/users", {
+    method: "POST",
+    body: JSON.stringify(user),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  return response.json();
+};
 
 function Register() {
+  const [isLoading, setIsLoading] = React.useState(false);
+
   return (
     <div className="App">
       <div className="LoginFormContainer">
+        {isLoading && <FullPageLoader />}
         <h2 className="LoginFormHeading">Sign Up</h2>
         <Formik
           initialValues={{
+            id: Math.floor(Math.random() * 1000),
             username: "",
             email: "",
             password: "",
@@ -41,12 +58,18 @@ function Register() {
             }
             return errors;
           }}
-          onSubmit={(values, { setSubmitting, resetForm }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-              resetForm();
-            }, 400);
+          onSubmit={async (values) => {
+            try {
+              setIsLoading(true);
+              console.log(values);
+              await saveUser(values);
+              setTimeout(() => {
+                setIsLoading(false);
+              }, 2000);
+            } catch (error) {
+              console.log(error);
+              setIsLoading(false);
+            }
           }}
         >
           {({
