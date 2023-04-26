@@ -1,0 +1,110 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  font-family: "Nunito Sans", sans-serif;
+  justify-content: center;
+}
+.LoginFormContainer {
+  width: 500px;
+  height: 550px;
+  padding: 80px;
+  border-radius: 10px;
+  background-color: #0f172a;
+  box-shadow: 0px 0px 20px 0px #32322c;
+}
+
+.LoginFormHeading {
+  text-align: center;
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+}
+
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textInput {
+  height: 35px;
+  padding-left: 10px;
+  margin-bottom: 30px;
+  align-self: stretch;
+  border-radius: 7px;
+  color: white;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0, 7);
+}
+
+.textInput::placeholder {
+  color: rgba(255, 255, 255, 0, 7);
+  font-family: sans-serif;
+}
+
+.CheckboxLabel {
+  margin-left: 20px;
+  vertical-align: bottom;
+  color: white;
+  font-weight: 600;
+}
+
+.CheckboxInput {
+  width: 18px;
+  height: 18px;
+  vertical-align: top;
+  margin-right: 10px;
+  margin-left: -20px;
+  margin-top: 0;
+  background-color: #59a96a;
+}
+
+.loginButton {
+  height: 60px;
+  width: 100%;
+  padding: 15px 32px;
+  margin-top: 40px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 22px;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  background-color: #db5461;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.loginButton:enabled {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0.3);
+}
+
+.loginButton:disabled {
+  height: 60px;
+  width: 100%;
+  padding: 15px 32px;
+  margin-top: 40px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 22px;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  background-color: #3f3c3c;
+  /* box-shadow: 0px 0px 20px rgba(0, 0, 0.3); */
+}
+
+/* .error{
+  content: " * ";
+  color: red;
+  margin-right: 380px;
+  margin-bottom: 10px;
+  font-size: 0.6em;
+} */
