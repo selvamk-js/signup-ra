@@ -9,7 +9,7 @@
 }
 .LoginFormContainer {
   width: 500px;
-  height: 550px;
+  height: 400px;
   padding: 80px;
   border-radius: 10px;
   background-color: #0f172a;
@@ -29,10 +29,17 @@
   align-items: center;
 }
 
+.fieldInput {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
 .textInput {
   height: 35px;
   padding-left: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   align-self: stretch;
   border-radius: 7px;
   color: white;
@@ -40,6 +47,19 @@
   border-style: solid;
   border-width: 1px;
   border-color: rgba(255, 255, 255, 0, 7);
+}
+
+.textInputError {
+  height: 35px;
+  padding-left: 10px;
+  margin-bottom: 0px;
+  align-self: stretch;
+  border-radius: 7px;
+  color: white;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-color: red;
 }
 
 .textInput::placeholder {
@@ -100,6 +120,14 @@
   color: white;
   background-color: #3f3c3c;
   /* box-shadow: 0px 0px 20px rgba(0, 0, 0.3); */
+}
+
+.helperText {
+  color: red;
+  font-size: 0.8em;
+  margin: 1px;
+  text-align: left;
+  display: "flex";
 }
 
 /* .error{

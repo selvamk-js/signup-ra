@@ -58,7 +58,7 @@ function Login() {
             type="text"
             name="name"
             required
-            placeholder="Enter your name"
+            placeholder="Enter your Name"
             onChange={onChange}
           />
           <input
@@ -66,7 +66,7 @@ function Login() {
             type="text"
             name="email"
             required
-            placeholder="Enter your email"
+            placeholder="Enter your Email"
             onChange={onChange}
           />
           <input
@@ -74,7 +74,7 @@ function Login() {
             type="password"
             name="password"
             required
-            placeholder="Enter your password"
+            placeholder="Enter your Password"
             onChange={onChange}
           />
           <input
@@ -82,7 +82,7 @@ function Login() {
             type="password"
             name="passwordAgain"
             required
-            placeholder="Confirm your password"
+            placeholder="Confirm your Password"
             onChange={onChange}
           />
           <label className="CheckboxLabel">
