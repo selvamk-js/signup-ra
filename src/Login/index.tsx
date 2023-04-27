@@ -4,6 +4,7 @@ import { Formik } from "formik";
 import "./login.css";
 import FullPageLoader from "../components/FullPageLoader";
 import { useNavigate } from "react-router-dom";
+import LoginContext from "../context/login.context";
 
 //save user using post
 const getUser = async (user: any) => {
@@ -15,6 +16,7 @@ const getUser = async (user: any) => {
 
 function Login() {
   const [isLoading, setIsLoading] = React.useState(false);
+  const { setLoggedInUser } = React.useContext(LoginContext);
   const navigate = useNavigate();
 
   return (
@@ -51,6 +53,7 @@ function Login() {
                 (u: any) =>
                   u.email === values.email && u.password === values.password
               );
+              setLoggedInUser(user);
               setTimeout(() => {
                 setIsLoading(false);
                 if (user) {
