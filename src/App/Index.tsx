@@ -4,6 +4,8 @@ import Register from "../Register";
 import Home from "../Home";
 import LoginContext from "../context/login.context";
 import { useState } from "react";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +33,9 @@ export default function App() {
 
   return (
     <LoginContext.Provider value={contextValue}>
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </LoginContext.Provider>
   );
 }

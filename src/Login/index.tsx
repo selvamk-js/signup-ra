@@ -5,6 +5,8 @@ import "./login.css";
 import FullPageLoader from "../components/FullPageLoader";
 import { useNavigate } from "react-router-dom";
 import LoginContext from "../context/login.context";
+import { useAppDispatch } from "../App/hooks";
+import { setLoggedInUser } from "./reducer";
 
 //save user using post
 const getUser = async (user: any) => {
@@ -16,8 +18,10 @@ const getUser = async (user: any) => {
 
 function Login() {
   const [isLoading, setIsLoading] = React.useState(false);
-  const { setLoggedInUser } = React.useContext(LoginContext);
+  // const { setLoggedInUser } = React.useContext(LoginContext);
   const navigate = useNavigate();
+
+  const dispatch = useAppDispatch();
 
   return (
     <div className="App">
@@ -53,7 +57,9 @@ function Login() {
                 (u: any) =>
                   u.email === values.email && u.password === values.password
               );
-              setLoggedInUser(user);
+              // setLoggedInUser(user);
+              dispatch(setLoggedInUser(user));
+
               setTimeout(() => {
                 setIsLoading(false);
                 if (user) {
